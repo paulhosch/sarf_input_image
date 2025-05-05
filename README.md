@@ -9,12 +9,14 @@ The `input_image.tif` has bands for input_features, label and more, these will l
 Throught the interactive pipeline.py skript the following bands will be computed and added to the image.
 
 ### SAR Features
+![SAR_Features](https://github.com/user-attachments/assets/bf817df2-dc06-42fa-b69b-b9e5a003be1c)
 
 ### Contextual Features
+![Contextual_Features](https://github.com/user-attachments/assets/52415ca6-3e2a-4fa7-a717-90c5c51a841d)
 
 ### Other Bands
+![Input_Data_and_Intermediate_Products](https://github.com/user-attachments/assets/66d78f1a-0ca6-4d0d-86f5-fa9a21dd5a11)
 
-// images
 
 ## Output
 
