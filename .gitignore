@@ -1,0 +1,29 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv_input_image/
+pyvista_env/
+
+# Cache
+cache/
+
+# MacOS files
+.DS_Store
+
+# Jupyter notebooks
+.ipynb_checkpoints
+
+# Log files
+*.log
+logs/
+
+# Environment variables
+.env
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-* 
