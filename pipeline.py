@@ -160,7 +160,10 @@ plot_bands(input_image_dir / 'input_image.tif',
 plot_image_stack(
     input_image_dir / 'input_image.tif', 
     plot_dir,
-    ["DEM", "OSM_WATER", "LAND_COVER"],
+    ['VV_PRE', 'VH_PRE', 'VV_VH_RATIO_PRE',
+                    'VV_POST', 'VH_POST', 'VV_VH_RATIO_POST',
+                    'VV_CHANGE', 'VH_CHANGE', 'VV_VH_RATIO_CHANGE',
+                    'SLOPE', 'HAND', 'EDTW', 'LAND_COVER'],
     spacing=1.5,
     horizontal=False
 )
