@@ -89,7 +89,7 @@ VIS_PARAMS = {
         "continuous": True
     },
     "HAND": {
-        "cmap": TOPO_COPPED,
+        "cmap": 'terrain',
         "vmin": None,
         "vmax": None,
         "title": "Height Above Nearest Drainage",

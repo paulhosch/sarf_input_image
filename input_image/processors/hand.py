@@ -114,6 +114,7 @@ def compute_hand(dem_path, water_path, burned_dem_path, bands_dir):
     # Resolve flats in DEM
     print("Resolving flats in DEM...")
     inflated_dem = grid.resolve_flats(inflated_dem)
+    
 
     # Compute flow direction
     print("Computing flow direction...")
@@ -126,7 +127,7 @@ def compute_hand(dem_path, water_path, burned_dem_path, bands_dir):
 
     # Compute HAND
     print("Computing HAND values...")
-    hand = grid.compute_hand(fdir, dem_data, osm_water > 0)
+    hand = grid.compute_hand(fdir, dem_data, osm_water > 0, nodata_out=0)
     hand_array = grid.view(hand)
     
     # Replace infinities and NaNs with a valid nodata value
