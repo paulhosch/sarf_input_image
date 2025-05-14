@@ -36,6 +36,13 @@ site_id = 'valencia'
 # when done, the directory should look like this (site_id and x,y,z are arbitrary):
 """ 
 data/
+--- if AOI is near the coast, download global seawater polygons from
+--- https://osmdata.openstreetmap.de/data/water-polygons.html and place in:
+    global_seawater/
+        water_polygons.shp
+        water_polygons.dbf
+        water_polygons.shx
+        ...
 └── case_studies/
     └──  {site_id}/
         ├── aoi/
@@ -153,7 +160,7 @@ plot_multi_bands(input_image_dir / 'input_image.tif',
 plot_bands(input_image_dir / 'input_image.tif',
             plot_dir,
             custom_extent='square',
-            bands_to_plot=['BURNED_DEM', 'HAND', 'DEM'] # None to plot all
+            bands_to_plot=['OSM_WATER', 'BURNED_DEM', 'HAND', 'DEM'] # None to plot all
             )
 
 # %% Plot 3D Map Stack
