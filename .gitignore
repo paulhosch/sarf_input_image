@@ -6,6 +6,12 @@ __pycache__/
 # Virtual environments
 venv_input_image/
 pyvista_env/
+*.venv/*
+.venv/
+.venv
+venv/
+ENV/
+env/
 
 # Cache
 cache/
@@ -27,3 +33,11 @@ logs/
 .idea/
 .vscode/
 *.sublime-* 
+
+*.tif
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
