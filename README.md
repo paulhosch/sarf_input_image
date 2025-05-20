@@ -64,8 +64,9 @@ python -m ipykernel install --user --name sarf_input_image --display-name "Pytho
 
 ```bash
 earthengine authenticate
+earthengine set_project auto-383910 #Projektname
 ```
-
+  
 ---
 
 ## Installation & Usage
