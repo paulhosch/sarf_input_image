@@ -13,6 +13,8 @@ pyvista_env/
 venv/
 ENV/
 env/
+../.venv/
+../.venv
 
 # Cache
 cache/
@@ -35,6 +37,7 @@ logs/
 .vscode/
 *.sublime-* 
 
+# Image files
 *.tif
 *.png
 *.jpg
