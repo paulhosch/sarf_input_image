@@ -2,6 +2,8 @@
 import warnings 
 # warnings.filterwarnings('ignore')
 from pathlib import Path
+import os
+import sys
 
 # input_image modules
 from input_image.gee.initialize import initialize_ee
@@ -22,14 +24,26 @@ from input_image.processors.hand import compute_hand, stream_burn
 from input_image.vis.plot_band import plot_bands
 from input_image.vis.plot_image_stack import plot_image_stack
 from input_image.vis.plut_multi_band import plot_multi_bands
-# Initialize Earth Engine
-initialize_ee()
 
+# Initialize Earth Engine
+print("\n=== Earth Engine Setup ===")
+# Try to get project ID from environment variable
+project_id = os.getenv('EARTHENGINE_PROJECT_ID')
+
+# Initialize Earth Engine
+if not initialize_ee(project_id):
+    print("\nError: Earth Engine initialization failed. Please follow these steps:")
+    print("1. Run 'earthengine authenticate' in your terminal")
+    print("2. Set up a Google Cloud project and enable Earth Engine API")
+    print("3. Set your project ID using:")
+    print("   export EARTHENGINE_PROJECT_ID='your-project-id'")
+    print("\nFor more details, visit: https://developers.google.com/earth-engine/guides/auth")
+    sys.exit(1)
 
 # %% Set Up Case Study
 # ------------------------------------------------------------
 # (1) Define the Case Study Name
-site_id = 'valencia'      
+site_id = 'danube'      
 
 # ------------------------------------------------------------
 # (2) Set up your  data directory and populate with case study data
@@ -86,7 +100,7 @@ aoi_gdf, aoi_ee = read_aoi(aoi_dir)
 # Read Dates
 pre_event_date, post_event_date = read_dates(case_study_dir)
 
-#%% Download DEM tiles from FathomDEM if needed (very timeconsuming consider manually poulating the dem_dir)
+ #%% Download DEM tiles from FathomDEM if needed (very timeconsuming consider manually poulating the dem_dir)
 #dem_tiles = get_FathomDEM_tiles(aoi_gdf, dem_dir)
 
 # %% Get Sentinel-1 VV and VH bands

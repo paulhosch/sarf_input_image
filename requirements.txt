@@ -10,21 +10,18 @@ geopandas==1.0.1
 shapely==2.1.0
 pyproj==3.7.1
 pysheds==0.4
-richdem==0.3.4  
-geopy==2.3.0
 
 # Remote sensing & Earth observation
 earthengine-api==1.5.12
 geedim==1.9.0
 geemap==0.35.3
-gemgis
 
 # Visualization
 matplotlib==3.10.1
 seaborn==0.13.2
 cartopy==0.24.1
 cmocean==3.0.3
-pyvista
+
 # OpenStreetMap data
 osmnx==2.0.2
 
@@ -33,4 +30,3 @@ requests==2.32.3
 pillow==11.2.1
 geojson==3.2.0
 numba==0.61.2 
-fiona
