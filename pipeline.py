@@ -2,8 +2,6 @@
 import warnings 
 # warnings.filterwarnings('ignore')
 from pathlib import Path
-import os
-import sys
 
 # input_image modules
 from input_image.gee.initialize import initialize_ee
@@ -43,7 +41,7 @@ if not initialize_ee(project_id):
 # %% Set Up Case Study
 # ------------------------------------------------------------
 # (1) Define the Case Study Name
-site_id = 'danube'      
+site_id = 'valencia'      
 
 # ------------------------------------------------------------
 # (2) Set up your  data directory and populate with case study data
@@ -117,6 +115,7 @@ get_esri_lulc(aoi_ee, bands_dir, year='2023')
 
 #%% Mosaic, clip, and convert DEM
 dem_path = process_dem(dem_dir, aoi_gdf, bands_dir)
+
 
 #%% Compute slope
 compute_slope(dem_path, bands_dir)
