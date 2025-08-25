@@ -27,6 +27,40 @@ Individual rasters (intermediate results) are saved in `input_image\bands\` in t
 
 ## Installation & Usage
 
+### Option 1: Complete Environment Recreation (Recommended)
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/paulhosch/sarf_input_image.git
+cd sarf_input_image
+```
+
+2. **Create environment from environment.yml (cross-platform)**
+
+```bash
+conda env create -f environment.yml
+conda activate sarf_input_image
+```
+
+3. **Authenticate with Google Earth Engine**
+
+```bash
+earthengine authenticate
+```
+
+### Option 2: Exact Environment Replication
+
+For exact replication of the development environment (same OS):
+
+```bash
+conda create --name sarf_input_image --file conda-explicit.txt
+conda activate sarf_input_image
+earthengine authenticate
+```
+
+### Option 3: Manual Installation
+
 1. **Clone the repository**
 
 ```bash
@@ -41,73 +75,29 @@ conda create -n sarf_input_image python=3.10 -y
 conda activate sarf_input_image
 ```
 
-3. **Install GDAL and richdem (required for DEM processing)**
+3. **Install GDAL and core geospatial packages**
 
 ```bash
-conda install -c conda-forge gdal richdem
+conda install -c conda-forge gdal geos proj geopandas rasterio richdem -y
 ```
 
-4. **Install requirements**
-
-```bash
-pip install -r requirements.txt
-```
-
-5. **(Optional) Register the environment as a Jupyter kernel**
-
-```bash
-pip install ipykernel
-python -m ipykernel install --user --name sarf_input_image --display-name "Python (sarf_input_image)"
-```
-
-6. **Authenticate with Google Earth Engine if required**
-
-```bash
-earthengine authenticate
-```
-
----
-
-## Installation & Usage
-
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/paulhosch/sarf_input_image.git
-cd sarf_input_image
-```
-
-2. **Create and activate a conda environment with Python 3.10**
-
-```bash
-conda create -n sarf_input_image python=3.10 -y
-conda activate sarf_input_image
-```
-
-3. **Install GDAL and richdem (required for DEM processing)**
-
-```bash
-conda install -c conda-forge gdal richdem
-```
-
-4. **Install requirements**
+4. **Install remaining requirements**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-5. **(Optional) Register the environment as a Jupyter kernel**
-
-```bash
-pip install ipykernel
-python -m ipykernel install --user --name sarf_input_image --display-name "Python (sarf_input_image)"
-```
-
-6. **Authenticate with Google Earth Engine if required**
+5. **Authenticate with Google Earth Engine**
 
 ```bash
 earthengine authenticate
 ```
+
+### Environment Files
+
+- `environment.yml`: Cross-platform conda environment (recommended)
+- `conda-explicit.txt`: Exact environment specification with URLs and checksums
+- `requirements.txt`: Pip-installable packages for manual installation
 
 ---
 
